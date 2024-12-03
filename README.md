@@ -33,7 +33,7 @@ Developed arbitrary style transfering web application consist of:
 2) Django based front-end
 
 The application can be tested on the following link:
-<a href="https://demopyt-production.up.railway.app/style_transfer/" target="_blank"> link to app</a>
+<a href="https://demopyt-production.up.railway.app/style_transfer/" target="blank"> link to app</a>
 
 ### Important terms
 
