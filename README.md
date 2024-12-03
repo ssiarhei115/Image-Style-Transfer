@@ -37,7 +37,7 @@ The application can be tested on the following link:
 <a href="https://demopyt-production.up.railway.app/style_transfer/" target="blank"> link to app</a>
 
 
-### Important terms
+#### Important terms
 
 ***TFRecords***
 
