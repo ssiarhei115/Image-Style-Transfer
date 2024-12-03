@@ -9,9 +9,13 @@ An artificial system based on a Deep Neural Network was introduced by Leon A. Ga
 Original paper: https://arxiv.org/abs/1508.06576
 
 ## Back-end
-Back-end part of the project based on Magenta Fast Style Transfer for Arbitrary Styles -  open-sources machine learning system for performing fast artistic style transfer that may work on arbitrary painting styles. In addition, because this system provides a learned representation, one may arbitrarily combine painting styles as well as dial in the strength of a painting style, termed "identity interpolation"
+Back-end part of the project based on Magenta Fast Style Transfer for Arbitrary Styles - open-sources machine learning system for performing fast artistic style transfer that may work on arbitrary painting styles. In addition, because this system provides a learned representation, one may arbitrarily combine painting styles as well as dial in the strength of a painting style, termed "identity interpolation"
 
 https://github.com/magenta/magenta/blob/main/README.md
+
+Example of arbitrary style transfer with Magenta:
+
+<img src='imgs/1.png'>
 
 #### Difficulties
 Main problems encountered during development are related to Magenta - this repository has been inactive for a while, so it requiered some efforts to get the scripts working. Here is an example of style transferring with different grades of "identity interpolation":  
@@ -24,7 +28,6 @@ Web application implementing NN arbitrary style transfer model is available on t
 
 ## Summary
 
-<img src='imgs/2.png'>
 Developed arbitrary style transfering web application consist of:
 
 1) Magenta based back-end
