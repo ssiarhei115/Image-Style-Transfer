@@ -15,7 +15,9 @@ https://github.com/magenta/magenta/blob/main/README.md
 
 ### Difficulties
 Main problems encountered during development are related to Magenta - this repository has been inactive for a while, so it requiered some efforts to get the scripts working. Here is an example of style transferring with different grades of "identity interpolation":  
+
 <img src='imgs/3.png'>
+
 Despite of the fact that Magenta gives tools to train your model for style transferring, it takes to much time to get the model trained to at least acceptable quality level. So pretrained model was used at back-end for deployment.
 
 ## Front-end
