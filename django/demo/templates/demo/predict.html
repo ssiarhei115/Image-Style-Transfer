@@ -1,0 +1,38 @@
+{% extends "demo/base.html" %}
+{% load static %}
+{% block title %}House price prediction{% endblock title %}
+
+{% block content %}
+<h3 style="padding-top: 0%;font-family:'Courier New', Courier, monospace;">Predict a price for your house using ML-model</h3>    
+<p>{{ params_enter }}</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table style="text-align: left; border: solid 1px #eceaea; padding: 0px; ">
+
+            {{ form.as_table }}
+        </table>
+        {% autoescape off %}
+        {{ submit_button }}
+        {% endautoescape %}
+    </form>
+
+    <p>{{ prediction_text }}</p>
+    <h3 style="background-color:tomato; width: 20%;">{{ predict }}</h3>
+    <p><br></p>
+    <p><br</p>
+    <p>{{ params_entered }}</p>
+    <table style="text-align: left; border: solid 1px #eceaea; padding: 0px; ">
+        {% for k,v in params.items %}
+        <p style="font-size:80%;">{{ k }} = {{ v }}</p>
+        {% endfor %}
+    </table>
+
+    
+{% endblock content %} 
+
+    {% block right %}
+    <p>ML-model predicting a price for countryhouses, houses & cottages. A source dataset was created by parsing 13000+ ads from realt.by yielding in total the data set with the shape (16187, 52).
+    <p>Some additional features were generated and added to the data set. They mainly based on house coordinates data and include distances till district city, regional city and Belarus capital.</p>
+    <p>LinearRegression was used as base model to be compared with. GradientBoosting appeared one of the most effective from the point of view of the metrics. 40 the most useful features were selected using SelectKBest.</p></p>
+    <p></p>
+    {% endblock right %} 

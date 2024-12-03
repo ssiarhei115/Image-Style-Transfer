@@ -1,0 +1,23 @@
+{% extends "demo/base.html" %}
+{% load static %}
+{% block title %}Contact{% endblock title %}
+{% block header %}{% endblock header %}
+
+{% block right %}
+
+{% endblock right %} 
+
+{% block content %}
+
+
+
+<h3>Use the form to hit me up</h3>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock content %} 

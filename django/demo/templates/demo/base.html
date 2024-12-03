@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href=" {% static '/css/style.css' %}">
+    <script type="text/javascript" src=" {% static '/js/1.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>{% block title %}Default title{% endblock title %}</title>
+</head>
+
+<body style="width:100%; text-align: center;">
+    <div style="width: 80%; border: solid 1px #fff;text-align: left;">
+    <div style="text-align: left;padding: 0% 3%;width: 80%;">
+        <h2><strong>demoPYT</strong></h2>
+    </div>
+    <div style="text-align: center;padding: 0% 3%;width: 80%;border-top:1px solid #000; padding-top: 8px;">
+        {% for i in premenu %}
+        <a href="{% url i %}" class="aprebutton">{{ i }}</a>
+        {% endfor %}
+    
+        {% for i in menu %}
+        <a href="{% url i %}" class="abutton">{{ i }}</a>
+        {% endfor %}
+    </div>
+    <div style="height:auto; padding-top: 2%;">
+        <div style="font-family: 'Courier New', Courier, monospace;width:15%; float: left;text-align: center;">
+            <img src="{% static 'examples/sv.jpg' %}" width="75%">
+            <p style="font-weight: bold;">Siarhei Volny</p>
+            <p>This site developer <br> CV-engineer <br> ML-engineer</p>
+            <br>
+            <p>
+                <a href="https://github.com/ssiarhei115" class="profile" target="_blank" ><img src="{% static 'examples/gh.jpg' %}" width="20px"></a>
+                <a href="https://www.instagram.com/wild.belarus/" class="profile" target="_blank"><img src="{% static 'examples/ig.jpg' %}" width="20px"></a>
+                <a href="https://www.kaggle.com/siarheis" class="profile" target="_blank"><img src="{% static 'examples/kaggle.jpg' %}" width="15px"></a>
+                <a href="https://www.linkedin.com/in/siarhei-volny-3b7922262" class="profile" target="_blank"><img src="{% static 'examples/ldn.jpg' %}" width="20px"></a>
+                
+                
+            </p>
+        </div>
+        <div style="margin-left: 17%; width:63%;border-left:1px solid #b9b8b8; padding-left: 2%;font-family: 'Courier New', Courier, monospace">
+            <div style="font-family: 'Courier New', Courier, monospace;font-size:medium; border-right:1px solid #e7e5e5;background-color: #f5f0f0;padding: 1px 5px; margin-bottom: 15px;">
+                {% block right %}{% endblock right %}
+            </div>
+            <div>
+            {% block content%}{% endblock content %}
+            </div>
+        </div>
+        
+        
+    </div>
+        
+    </div>
+    <div style="position: fixed; bottom:0; left:0;font-family:'Courier New', Courier, monospace; font-weight: bold;text-align: center;padding-left: 5px;">Volny 2024</div>
+</div>
+</body>
+</html>

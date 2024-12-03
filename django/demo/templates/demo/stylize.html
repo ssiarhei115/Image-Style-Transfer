@@ -1,0 +1,67 @@
+{% extends "demo/base.html" %}
+{% load static %}
+{% block title %}Style_transfer{% endblock title %}
+{% block header %}
+
+{% endblock header %}
+
+{% block right %}
+    <p><strong>Style Transfer</strong> is a technique in computer vision and graphics that involves generating a new image by combining the content of one image with the style of another image. 
+        The goal of style transfer is to create an image that preserves the content of the original image while applying the visual style of another image.</p>
+    {% endblock right %} 
+
+{% block content %}
+
+<table>
+    <tr>
+        <td style="width: 27%;"><img src="{% static 'examples/cow.jpg' %}" width="100%"></td>
+        <td style="text-align: center;"><h1>+</h1></td>
+        <td style="width: 27%;"><img src="{% static 'examples/daudi.jpg' %}" width="100%"></td>
+        <td style="text-align: center;"><h1>=</h1></td>
+        <td style="width: 27%;"><img src="{% static 'examples/cow_stylized.jpg' %}" width="100%"></td>
+    </tr>
+</table>
+<div style="text-align: left; margin-left: 2%; margin-bottom: 3%;">
+    <h3 style="padding-top: 2%;font-family:'Courier New', Courier, monospace; ">Make a magic with your picture</h3>
+    <div>{{ params_enter }}
+    <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <table style="text-align: left; border: solid 1px #eceaea; padding: 0px; width: 60%;">
+            {{ form.as_table }}
+        </table>
+        {% autoescape off %}
+        {{ submit_button }}
+        {% endautoescape %}
+        
+    </form>
+</div>
+</div>
+    
+   
+    <table style="align-items: center;table-layout:fixed;width: 90%; padding: 0%; margin: 0%;">
+        <tr>
+            <td style="text-align: right;width: 45%;font-size: small;">{{ content_inp }}</td>
+            <td style="text-align: center;width: 5%;"></td>
+            <td style="text-align: left;width: 45%;font-size: small;">{{ style_inp }}</td>
+        <tr>
+        <tr>
+            <td style="text-align: right;width: 45%;"><img src="{{ content }}" alt="" width=60%/></td>
+            <td style="text-align: center;width: 5%;"><h3>{{ plus }}</h3></td>
+            <td style="text-align: left;width: 45%;"><img src="{{ style }}" alt="" width=60%/></td>
+        </tr>
+        
+    </table>
+
+      
+    <table style="align-items: center;table-layout:fixed;width: 90%; padding: 0%; margin: 0%;">
+        <tr>
+            <td style="text-align: center;width: 10%;"><h3 style="font-family:Courier New, monospace;">{% autoescape off %}{{ style_transfer_result }}{% endautoescape %}</h3></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;width: 100%;"><img src="{{ mixed_image }}" alt="" width=60% /> </td>
+        </tr>
+        
+    </table>
+
+    {% endblock content %} 
+  

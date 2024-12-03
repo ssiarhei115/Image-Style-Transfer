@@ -1,0 +1,47 @@
+{% extends "demo/base.html" %}
+{% load static %}
+{% block title %}About{% endblock title %}
+{% block header %}
+
+<p style="padding-top: 2%;">ABOUT</p>
+{% endblock header %}
+
+{% block content %}
+    <h3>Style Transfer</h3>
+    <p>An artificial system based on a Deep Neural Network was introduced by Leon A. Gatys, Alexander S. Ecker, Matthias Bethge: 
+        it creates artistic images of high perceptual quality. The system uses neural representations to separate and recombine 
+        content and style of arbitrary images, providing a neural algorithm for the creation of artistic images (https://arxiv.org/abs/1508.06576).
+    </p>
+    <p>Back-end part of the project based on Magenta Fast Style Transfer for Arbitrary Styles -  open-sources machine learning system 
+        for performing fast artistic style transfer that may work on arbitrary painting styles. In addition, because this system provides 
+        a learned representation, one may arbitrarily combine painting styles as well as dial in the strength of a painting style, 
+        termed "identity interpolation" (https://github.com/magenta/magenta/blob/main/README.md)
+    </p>
+
+    <p>Main problems encountered during development are related to Magenta - this repository has been inactive for a while, 
+        so it requiered plenty of efforts to get the scripts working. Despite of the fact that Magenta gives tools to train your 
+        model for style transferring, it takes to much time to get the model trained to at least acceptable quality level. 
+        So pretrained model was used at back-end for inference.
+    </p>
+    
+    <h3>House price prediction</h3>
+    <p>Mashine learning model inference for house price prediction (in Belarus)</p>
+    <ul>It can be useful for:
+        <li>those who is going to sell their house</li>
+        <li>those who is going to buy a house</li>
+    </ul>
+    <p>Primary dataset is one parsed from the web site realt.by. It contains data about more than 16000 ads in Belarus in Apr 2024.</p>
+        
+    <p>At the 1st iterration of the project the main goal was building a model predicting a price only for countryhouses. 
+        Approximately 3000+ ads was parsed from realt.by. Taking into account relatively small size of the data set it was decided and seemed reasonable 
+        to use R2-score to evaluate model quality. When R2-score close to 0.7 was obtained I moved to the 2nd iterration. 
+        The new goal was reformulated: Building a model predicting a price for countryhouses, houses & cottages. 
+        This goal required more data for analysis. At the 2nd iterration more than 13000 ads was additionaly parsed from the same web source yieldind 
+        in total the data set with the shape (16187, 52). </p>    
+    <p>The data was parsed from realt.by web-site using Selenium library & Chrome Webdriver engine. </p>    
+    
+    <p>Some additional features were generated and added to the data set. They mainly based on house coordinates data and include distances till district city, regional city and Belarus capital.</p>
+    <p>LinearRegression was used as base model to be compared with. GradientBoosting appeared one of the most effective from the point of view of the metrics.
+        40 the most useful features were selected using SelectKBest.</p>    
+
+{% endblock content %} 
