@@ -24,7 +24,7 @@ Despite of the fact that Magenta gives tools to train your model for style trans
 
 ## Front-end
 This part of the project was developed on Django.
-Web application implementing NN arbitrary style transfer model is available on the following link: <a href="https://demopyt-production.up.railway.app/style_transfer/" target="blank"> link to app</a>
+Web application implementing NN arbitrary style transfer model is available on the following link: <a href="https://demopyt.site/style_transfer/" target="blank"> link to app</a>
 
 ## Summary
 
@@ -34,7 +34,7 @@ Developed arbitrary style transfering web application consist of:
 2) Django based front-end
 
 The application can be tested on the following link:
-<a href="https://demopyt-production.up.railway.app/style_transfer/" target="blank"> link to app</a>
+<a href="https://demopyt.site/style_transfer/" target="blank"> link to app</a>
 
 
 #### Important terms
